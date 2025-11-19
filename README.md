@@ -2,7 +2,7 @@
 
 A browser extension aiming to bypass the Netflix household verification prompts by employing different strategies depending on the page context.
 
-**Supports:** `Chrome` (and Chromium-based browsers like Edge) | Yet to write code for:  `Firefox`
+**Supports:** `Chrome` (and Chromium-based browsers like Brave, Comet, MS Edge) | Yet to write code for:  `Firefox`
 
 ---
 
@@ -52,6 +52,7 @@ https://www.youtube.com/watch?v=ayMTZPphrJI for reference
 *   This extension is not endorsed by or affiliated with Netflix in any way.
 *   Use this extension at your own risk. The developers assume no liability.
 *   Modifying network requests or the DOM on third-party websites might violate their Terms of Service. Be aware of the potential consequences.
+
 
 
 
