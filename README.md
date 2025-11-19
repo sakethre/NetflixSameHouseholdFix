@@ -53,11 +53,8 @@ https://www.youtube.com/watch?v=ayMTZPphrJI for reference
 *   Use this extension at your own risk. The developers assume no liability.
 *   Modifying network requests or the DOM on third-party websites might violate their Terms of Service. Be aware of the potential consequences.
 
----
 
-## License
 
-Copyright [Amachi] - All Rights Reserved.
 
-Permission is granted to download and use this software for personal, non-commercial purposes only. Redistribution, modification, or commercial use of this software, in whole or in part, is strictly prohibited without the express written permission of the copyright holder.
+
 
