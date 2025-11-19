@@ -1,8 +1,9 @@
-# Netflix Household No More 🚫
+# Netflix Household No More 
 
 A browser extension aiming to bypass the Netflix household verification prompts by employing different strategies depending on the page context.
 
 **Supports:** `Chrome` (and Chromium-based browsers like Edge, Brave, Comet, Atlas, Dia, etc.) 
+**Supports:** `Chrome` (and Chromium-based browsers like Brave, Comet, MS Edge) | Yet to write code for:  `Firefox`
 
 ---
 
@@ -17,14 +18,15 @@ A browser extension aiming to bypass the Netflix household verification prompts 
 
 ## Installation
 
-**Google Chrome / Microsoft Edge / Chromium Browsers:** Extension not published yet.
+**Google Chrome / Microsoft Edge / Chromium Browsers:** Extension not published yet hence use this code here in this githib.
 
 
 ## Installation (Local Development/Testing)
 
 As this extension is not published yet on chrome store, you need to load it manually.
+https://www.youtube.com/watch?v=ayMTZPphrJI for reference
 
-**Google Chrome / Microsoft Edge / Chromium Browsers:**
+**Google Chrome / Microsoft Edge / Chromium Browsers such as Comet, Brave, Atlas, Dia, MS Edge and many:**
 
 1.  Download or clone this repository to your local machine.
 2.  Open your browser and navigate to `chrome://extensions` (or `edge://extensions`).
@@ -51,10 +53,10 @@ As this extension is not published yet on chrome store, you need to load it manu
 *   Use this extension at your own risk. The developers assume no liability.
 *   Modifying network requests or the DOM on third-party websites might violate their Terms of Service. Be aware of the potential consequences.
 
----
 
-## License
 
-Copyright [Amachi] - All Rights Reserved.
 
-Permission is granted to download and use this software for personal, non-commercial purposes only. Redistribution, modification, or commercial use of this software, in whole or in part, is strictly prohibited without the express written permission of the copyright holder.
+
+
+
+
