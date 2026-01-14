@@ -1,4 +1,4 @@
-# Netflix Household No More 
+# Netflix Same Household Issue Code fix
 
 A browser extension aiming to bypass the Netflix household verification prompts by employing different strategies depending on the page context. Total effort, less than 5 minutes if done right. 
 
@@ -53,6 +53,7 @@ https://www.youtube.com/watch?v=ayMTZPphrJI for reference on manual loading of g
 *   Use this extension at your own risk. I assume no liability.
 *   Modifying network requests or the DOM on third-party websites might violate their Terms of Service. Be aware of the potential consequences.
 *   Saketh Reddy Narahari
+
 
 
 
