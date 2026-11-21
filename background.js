@@ -6,7 +6,7 @@ const CONTENT_SCRIPT_FILE = 'content.js';
 const STORAGE_KEY = 'extensionEnabled';
 
 // --- Browser Compatibility ---
-const isFirefox = !chrome.declarativeNetRequest;
+const isFirefox = typeof browser !== "undefined";
 const tabsToBlockOnFirefox = new Set();
 
 let isExtensionEnabled = true;
@@ -234,17 +234,31 @@ chrome.runtime.onStartup.addListener(async () => {
 updateEnabledState();
 
 // --- Firefox-specific webRequest Listener ---
+// Firefox can read POST bodies in a blocking listener, so only the household
+// check operations are blocked and the player requests still go through.
 if (isFirefox) {
+    const BLOCK_OPS = ["CLCSInterstitialPlaybackAndPostPlayback", "CLCSSendFeedback"];
+    const decoder = new TextDecoder("utf-8");
+
     chrome.webRequest.onBeforeRequest.addListener(
         (details) => {
-            if (tabsToBlockOnFirefox.has(details.tabId)) {
-                console.log(`[Firefox] Blocking request for tab ${details.tabId}:`, details.url);
+            if (!isExtensionEnabled || details.method !== "POST") return { cancel: false };
+            let body = "";
+            try {
+                const raw = details.requestBody?.raw;
+                if (raw) body = raw.map(p => (p.bytes ? decoder.decode(p.bytes) : "")).join("");
+            } catch (e) {
+                console.warn("[Firefox] Could not read request body", e);
+            }
+            const op = BLOCK_OPS.find(o => body.includes(o) || details.url.includes(o));
+            if (op) {
+                console.log(`[Firefox] Blocking ${op} for tab ${details.tabId}:`, details.url);
                 return { cancel: true };
             }
             return { cancel: false };
         },
-        { urls: [GRAPHQL_URL], types: ["xmlhttprequest"] },
-        ["blocking"]
+        { urls: ["*://*.netflix.com/graphql*"], types: ["xmlhttprequest"] },
+        ["blocking", "requestBody"]
     );
     console.log("Firefox webRequest listener initialized.");
 }
